@@ -33,12 +33,13 @@ int main()
         cout << "enter element of an array A[" << i << "]" << endl;
         cin >> arr[i];
     }
-    cout << "before reverse an array is" << endl;
+    cout << "before reverse an array is:-" << endl;
     PrintArray(arr, size);
     rearr(arr, size);
     cout << endl;
-    cout << "after reverse an array is" << endl;
+    cout << "after reverse an array is:-" << endl;
 
     PrintArray(arr, size);
     return 0;
+
 }
