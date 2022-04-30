@@ -32,11 +32,11 @@ int main()
         cout << "enter element of an array A[" << i << "]" << endl;
         cin >> arr[i];
     }
-    cout<<"without swap"<<endl;
-        PrintArray(arr, size);
+    cout << "without swap" << endl;
+    PrintArray(arr, size);
 
     swapalternate(arr, size);
-        cout<<"alternate swap"<<endl;
+    cout << "alternate swap" << endl;
 
     PrintArray(arr, size);
     return 0;
