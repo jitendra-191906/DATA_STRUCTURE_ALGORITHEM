@@ -22,7 +22,7 @@ int binarySearch(int arr[], int size, int key)
         {
             end = mid - 1;
         }
-        mid = start + end  / 2;
+        mid = start + end / 2;
     }
     return -1;
 }
@@ -34,11 +34,11 @@ int main()
 
     int evenIndex = binarySearch(even, 6, 6);
 
-    cout << " Index of 6 is " << evenIndex << endl;
+    cout << " Index of " << evenIndex << " is " << even[evenIndex] << endl;
 
     int oddIndex = binarySearch(odd, 5, 1);
 
-    cout << " Index of 14 is " << oddIndex << endl;
+    cout << " Index of " << oddIndex << " is " << odd[oddIndex] << endl;
 
     return 0;
 }
