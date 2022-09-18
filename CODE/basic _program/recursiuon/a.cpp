@@ -1,7 +1,8 @@
 #include<iostream>
 #include<string>
 using namespace std;
-string satdigit(int n,string arr){
+
+void satdigit(int n,string arr[]){
  // base case
  if(n==0){
     return ;
@@ -15,7 +16,8 @@ cout<<arr[digit]<<endl;
 }
 int main(){
     int n;
-    cin>>n;
-    string arr[10]={"one","two","three","fo ur","five","six","seven","eight","nine"};
+    cout <<"enter a number";
+   cin>>n;
+    string arr[10]={ "zero","one","two","three","four","five","six","seven","eight","nine"};
  satdigit(n, arr) ;
-}
+} 
