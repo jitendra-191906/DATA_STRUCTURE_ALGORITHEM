@@ -37,3 +37,7 @@ int main()
     cout << "if return 1 then string is palidrome and return 0 then string is not palidrome" << endl
          << check_palidrome(name, leng);
 }
+for (auto i = 1; i < str.size(); ++i)
+    if (str[i - 1] == str[i]) 
+	  return removeDuplicates(str.substr(0, i - 1) + str.substr(i + 1));
+  return str;
