@@ -5,8 +5,9 @@ int main(){
    
     stack<char> s;
     string str;
+    cout<<"enter the string"<<endl;
     cin>>str;
-    cout<<"input string:- "<<str;
+    cout<<"input string:- "<<str<<endl;
     for(int i=0;i<str.length();i++){
     char ch = str[i];
     s.push(ch);
