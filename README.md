@@ -1,0 +1,6 @@
+# DATA_STRUCTURE_ALGORITHEM
+BASIC TO ADVANCED DSA JOURNEY
+SOME KEY POINT FOLLOW
+1) Regulartity
+2)coding contast on various paltform
+
