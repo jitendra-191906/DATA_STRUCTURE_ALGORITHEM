@@ -1,0 +1,157 @@
+// You have a Single Linked List of any length
+// Insert A Element at any position in between given Linked List
+
+// eg:  LL = 1 2 3 4 5,
+// insert element = 8, position= 2
+
+// output: LL = 1 8 2 3 4 5
+
+#include <iostream>
+
+using namespace std;
+
+class Node
+{
+public:
+       int data;
+       Node *next;
+
+       Node(int data)
+       {
+              this->data = data;
+              this->next = NULL;
+       }
+};
+
+// I want to insert a node right at the head of Linked List
+void insertAtHead(Node *&head, Node *&tail, int data)
+{
+       // check for Empty LL
+       if (head == NULL)
+       {
+              Node *newNode = new Node(data);
+              head = newNode;
+              tail = newNode;
+       }
+       else
+       {
+              // step1:
+              Node *newNode = new Node(data);
+              // step2:
+              newNode->next = head;
+              // step3:
+              head = newNode;
+       }
+}
+
+void insertAtTail(Node *&head, Node *&tail, int data)
+{
+       if (head == NULL)
+       {
+              Node *newNode = new Node(data);
+              head = newNode;
+              tail = newNode;
+              return;
+       }
+       // step1: creatae a node
+       Node *newNode = new Node(data);
+       // step2: connect woth tail ndoe
+       tail->next = newNode;
+       // step3: update tail;
+       tail = newNode;
+}
+void print(Node *&head)
+{
+
+       Node *temp = head;
+       while (temp != NULL)
+       {
+              cout << temp->data << " ";
+              temp = temp->next;
+       }
+}
+
+int findLength(Node *&head)
+{
+       int len = 0;
+       Node *temp = head;
+       while (temp != NULL)
+       {
+              temp = temp->next;
+              len++;
+       }
+       return len;
+}
+
+void insertAtPosition(int data, int position, Node *&head, Node *&tail)
+{
+       if (head == NULL)
+       {
+              Node *newNode = new Node(data);
+              head = newNode;
+              tail = newNode;
+              return;
+       }
+       // step1: find the position: prev & curr;
+
+       if (position == 0)
+       {
+              insertAtHead(head, tail, data);
+              return;
+       }
+
+       int len = findLength(head);
+
+       if (position >= len)
+       {
+              insertAtTail(head, tail, data);
+              return;
+       }
+
+       // ste1:find prev and curr
+       int i = 1;
+       Node *prev = head;
+       while (i < position)
+       {
+              prev = prev->next;
+              i++;
+       }
+       Node *curr = prev->next;
+
+       // step2;
+       Node *newNode = new Node(data);
+
+       // step3:
+       newNode->next = curr;
+
+       // step4:
+       prev->next = newNode;
+}
+
+int main()
+{
+
+       Node *head = NULL;
+       Node *tail = NULL;
+       cout<<"the input Linklist is : -"<<endl;
+       insertAtHead(head, tail, 1);
+       insertAtTail(head, tail, 5);
+
+       insertAtPosition(2, 1, head, tail);
+       insertAtPosition(3, 2, head, tail);
+       insertAtPosition(4, 3, head, tail);
+       print(head);
+       cout << endl;
+       int pos;
+       cout << "enter the position where we want to inseart new node" << endl;
+       cin >> pos;
+       int data;
+       cout << "enter the data value " << endl;
+       cin >> data;
+       insertAtPosition(data, pos-1, head, tail);
+
+       print(head);
+       cout << endl;
+
+       return 0;
+}
