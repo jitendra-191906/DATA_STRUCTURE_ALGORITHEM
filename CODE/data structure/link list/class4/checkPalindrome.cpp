@@ -1,7 +1,3 @@
-// You are given a Linked List of any length
-// Reverse the given linked list
-// eg:  LL = 1 2 3 4 5 6
-// output:  6 5 4 3 2 1
 // You have given a Linked List
 // Check that given Linked List is Palindrome or Not
 // eg:  LL = 10  20  30  20  10
@@ -23,18 +19,18 @@ public:
 void print(Node *head)
 {
       Node *temp = head;
-      while (temp !=NULL)
+      while (temp != NULL)
       {
             cout << temp->data << " ";
             temp = temp->next;
       }
 }
-void reversenode(Node *&head)
+Node* reversenode(Node *&head)
 {
       if (head == NULL)
       {
             cout << "linklist is empty" << endl;
-            return;
+            return NULL;
       }
       Node *prev = NULL;
       Node *curr = head;
@@ -46,30 +42,35 @@ void reversenode(Node *&head)
             curr = prev;
             frw = curr;
       }
+      return prev;
 }
-Node* reverse(Node *&head)
+bool palidromecheck(Node *&head)
 {
       if (head == NULL)
       {
-            return head;
+            return true;
       }
       if (head->next == NULL)
       {
-            return head;
+            return true;
       }
-     
+      // find middle nodes
+      Node *slow = head;
+      Node *fast = head;
+      while (fast != NULL)
+      {
+            fast = fast->next;
+            if (fast != NULL)
+            {
+                  fast = fast->next;
+                  slow = slow->next;
+            }
+      }
+      // here is slow node is the middle node
+      // slow->next = reversenode(slow->next);
 
-     Node* prev=NULL;
-     Node* curr=head;
-     Node* frw=curr->next;
-     while(frw!=NULL){
-         frw=curr->next;
-         curr->next=prev;
-         curr=prev;
-         frw=curr;
-     }
-     return prev;
-}
+return true;
+} 
 int main()
 {
       Node *head = new Node(10);
@@ -88,10 +89,6 @@ int main()
 
       print(head);
       cout << endl;
-      cout<<"reverse linkilist is:"<<endl;
-      reverse(head);
-      head =print(head);
-      cout<<endl;
 
       return 0;
 }

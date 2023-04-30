@@ -1,6 +1,6 @@
 // create a DataType of Double linked list
 
-// Create a DataType of Circular Single Linked list
+
 
 #include <iostream>
 using namespace std;

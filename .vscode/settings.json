@@ -3,6 +3,9 @@
             "iostream": "cpp",
             "vector": "cpp",
             "ostream": "cpp",
-            "__node_handle": "cpp"
+            "__node_handle": "cpp",
+            "regex": "cpp",
+            "istream": "cpp",
+            "*.tcc": "cpp"
       }
 }

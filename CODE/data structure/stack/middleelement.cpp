@@ -1,6 +1,8 @@
 #include<iostream>
+#include<stack>
 using namespace std;
 #include<stack>
 int main(){
-    stack 
+    
+    stack <int>s;
 }
