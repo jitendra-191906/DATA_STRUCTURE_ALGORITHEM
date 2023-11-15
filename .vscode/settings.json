@@ -6,6 +6,7 @@
             "__node_handle": "cpp",
             "regex": "cpp",
             "istream": "cpp",
-            "*.tcc": "cpp"
+            "*.tcc": "cpp",
+            "queue": "cpp"
       }
 }
